@@ -79,6 +79,7 @@ export default {
 
   div {
     width: 90%;
+    min-width: 200px;
     position: relative;
 
     &::after {

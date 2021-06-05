@@ -51,10 +51,14 @@ export default {
 
 <style lang="scss" scoped>
 .outer {
+  width: 100%;
   background-image: url("../assets/coffeebeans-1.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   height: 75vh;
+  min-height: 75vh;
+  padding: 0;
+  overflow: hidden;
 }
 
 .inner {
@@ -62,18 +66,21 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid blue;
 }
 
 .headline {
   color: white;
   display: flex;
   height: 100%;
+  border: 1px solid red;
 }
 
 .headline-description {
   display: flex;
   flex-direction: column;
   width: 50%;
+  border: 1px solid green;
 
   h1 {
     font-weight: 700;
@@ -101,13 +108,63 @@ export default {
 
 .app-mockup {
   width: 50%;
+  height: 100%;
   display: flex;
   justify-content: start;
   align-items: flex-end;
+  border: 1px solid yellow;
 
   img {
     width: 800px;
     transform: translateX(-100px);
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .inner {
+    min-width: 100%;
+  }
+
+  .app-store-buttons {
+    flex-direction: column;
+    margin-top: 30px;
+
+    img {
+      &:first-of-type {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .app-mockup {
+    img {
+      width: 650px;
+      transform: translateX(-150px);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .outer {
+    height: auto;
+  }
+  .headline {
+    flex-direction: column;
+  }
+
+  .headline-description {
+    width: 100%;
+
+    h1 {
+      margin-top: 20px;
+    }
+  }
+
+  .app-mockup {
+    width: 100%;
+
+    img {
+    }
   }
 }
 </style>
