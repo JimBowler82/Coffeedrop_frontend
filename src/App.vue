@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <b-container id="app" fluid>
+    <Header />
+    <SectionDescription />
+    <SectionPrices />
+    <Map />
+    <Footer />
+  </b-container>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header";
+import SectionDescription from "./components/SectionDescription";
+import SectionPrices from "./components/SectionPrices";
+import Map from "./components/Map";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Header,
+    SectionDescription,
+    SectionPrices,
+    Map,
+    Footer,
   },
 };
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;700&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0;
+  margin: 0;
 }
 </style>
