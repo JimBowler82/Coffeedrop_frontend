@@ -69,6 +69,8 @@ export default {
       });
 
       addEventListener("resize", () => map.getViewPort().resize());
+
+      //new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     },
   },
 };

@@ -66,21 +66,18 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
 }
 
 .headline {
   color: white;
   display: flex;
   height: 100%;
-  border: 1px solid red;
 }
 
 .headline-description {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border: 1px solid green;
 
   h1 {
     font-weight: 700;
@@ -112,7 +109,6 @@ export default {
   display: flex;
   justify-content: start;
   align-items: flex-end;
-  border: 1px solid yellow;
 
   img {
     width: 800px;
@@ -138,15 +134,15 @@ export default {
 
   .app-mockup {
     img {
-      width: 650px;
-      transform: translateX(-150px);
+      // width: 650px;
+      // transform: translateX(-150px);
     }
   }
 }
 
 @media screen and (max-width: 800px) {
   .outer {
-    height: auto;
+    min-height: 100vh;
   }
   .headline {
     flex-direction: column;
@@ -164,6 +160,23 @@ export default {
     width: 100%;
 
     img {
+      //width: 750px;
+      transform: translate(10px, -80px);
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .headline-description {
+    h3 {
+      display: none;
+    }
+  }
+
+  .app-mockup {
+    img {
+      //width: 750px;
+      transform: translate(-200px, 0px);
     }
   }
 }

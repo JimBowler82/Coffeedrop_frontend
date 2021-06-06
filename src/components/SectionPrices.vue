@@ -3,7 +3,7 @@
     <b-container class="inner">
       <h3>Prices</h3>
       <b-row class="row">
-        <b-col class="price-card">
+        <b-col class="price-card b-col" cols="12" sm="6" md="4" order-md="0">
           <div>
             <h4>The first 50 capsules:</h4>
             <ul>
@@ -13,7 +13,7 @@
             </ul>
           </div>
         </b-col>
-        <b-col class="price-card">
+        <b-col class="price-card b-col" cols="12" sm="6" md="4" order-md="0">
           <div>
             <h4>Capsules 50-500:</h4>
             <ul>
@@ -23,7 +23,15 @@
             </ul>
           </div>
         </b-col>
-        <b-col class="price-card">
+        <b-col
+          class="price-card b-col"
+          cols="12"
+          sm="6"
+          offset-sm="3"
+          md="4"
+          offset-md="0"
+          order-md="0"
+        >
           <div>
             <h4>Capsules 501+:</h4>
             <ul>
@@ -47,11 +55,12 @@ export default {
 <style lang="scss" scoped>
 .outer {
   background-color: #373737;
-  height: 75vh;
+  min-height: 75vh;
+  padding: 0;
 }
 
 .inner {
-  height: 100%;
+  min-height: inherit;
   min-width: 80%;
   display: flex;
   flex-direction: column;
@@ -65,43 +74,53 @@ export default {
   }
 }
 
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
 .price-card {
-  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  h4 {
-    text-align: center;
-    color: #29e7a9;
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
 
   div {
+    height: 300px;
     width: 90%;
     min-width: 200px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     &::after {
       content: url("../assets/coffee-beans.svg");
       position: absolute;
       bottom: 0;
       left: 50%;
-
       transform: translate(-50%, 40%);
     }
   }
 
-  ul {
+  h4 {
+    text-align: center;
+    color: #29e7a9;
     width: 100%;
+    margin-top: 20px;
   }
 
   ul {
+    width: 100%;
+    min-width: 200px;
     background-color: #4e4e4e;
     border-radius: 5px;
     list-style: none;
     padding: 0;
   }
+
   li {
     color: white;
     width: 100%;
@@ -111,6 +130,22 @@ export default {
       background-color: #626262;
       border-radius: 5px;
     }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .inner {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inner h3 {
+    margin: 30px 0;
+  }
+
+  .row {
+    margin: 0;
   }
 }
 </style>

@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .outer {
-  height: 15vh;
+  height: 12vh;
   background-color: #373737;
 }
 

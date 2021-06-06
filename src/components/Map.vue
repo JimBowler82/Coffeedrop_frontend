@@ -13,7 +13,7 @@ export default {
   name: "Map",
   data() {
     return {
-      center: { lat: 50.460983, lng: 8.061859 },
+      center: { lat: 52.934931, lng: 4.895098 },
     };
   },
   components: {

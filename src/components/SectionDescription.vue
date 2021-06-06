@@ -2,8 +2,16 @@
   <b-container class="outer" fluid>
     <b-container class="inner">
       <h3>How it works</h3>
-      <b-row class="row">
-        <b-col>
+      <b-row class="row" cols-lg="3">
+        <b-col
+          class="b-col"
+          cols="8"
+          offset="2"
+          sm="6"
+          offset-sm="0"
+          md="6"
+          lg="4"
+        >
           <div class="description-box">
             <img src="../assets/icon-1.svg" alt="icon 1" />
             <p>
@@ -12,10 +20,16 @@
             </p>
           </div>
         </b-col>
-        <b-col class="arrow">
-          <img src="../assets/arrow.svg" alt="arrow" />
-        </b-col>
-        <b-col>
+
+        <b-col
+          class="b-col"
+          cols="8"
+          offset="2"
+          sm="6"
+          offset-sm="0"
+          md="6"
+          lg="4"
+        >
           <div class="description-box">
             <img src="../assets/icon-2.svg" alt="icon 2" />
             <p>
@@ -24,11 +38,19 @@
             </p>
           </div>
         </b-col>
-        <b-col class="arrow">
-          <img src="../assets/arrow.svg" alt="arrow" />
-        </b-col>
-        <b-col>
-          <div class="description-box">
+
+        <b-col
+          class="b-col"
+          cols="8"
+          offset="2"
+          sm="6"
+          offset-sm="3"
+          md="6"
+          offset-md="3"
+          lg="4"
+          offset-lg="0"
+        >
+          <div class="description-box not">
             <img src="../assets/icon-3.svg" alt="icon 3" />
             <p>
               Our trained staff will quickly calculate your cashback - or better
@@ -50,8 +72,9 @@ export default {
 
 <style lang="scss" scoped>
 .outer {
-  height: 75vh;
+  min-height: 75vh;
   background-color: rgb(228, 228, 228);
+  padding: 0;
 }
 
 .inner {
@@ -60,6 +83,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 50px;
 
   h3 {
     text-align: center;
@@ -71,15 +95,6 @@ export default {
   display: flex;
   align-items: center;
   justify-items: center;
-
-  .arrow {
-    align-self: flex-start;
-    transform: translateY(225%);
-    display: flex;
-    max-width: 70px;
-    padding: 0;
-    margin: 0;
-  }
 }
 
 .description-box {
@@ -88,15 +103,66 @@ export default {
   align-items: center;
   padding: 30px;
   height: 500px;
-  width: 100%;
+  position: relative;
 
   img {
-    width: 200px;
+    width: 75%;
+    min-width: 150px;
+    max-width: 275px;
   }
 
   p {
     margin-top: 30px;
     text-align: center;
+  }
+}
+
+.b-col {
+  &:not(:nth-of-type(3))::after {
+    content: "";
+    background-image: url("../assets/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-y: 25%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    margin-top: 25%;
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .inner {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .b-col {
+    &:not(:nth-of-type(3))::after {
+      width: 80px;
+      height: 80px;
+      margin-top: 30%;
+    }
+
+    &:not(:nth-of-type(1))::after {
+      display: none;
+    }
+  }
+
+  .description-box {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .b-col {
+    &:first-of-type::after {
+      display: none;
+    }
   }
 }
 </style>
