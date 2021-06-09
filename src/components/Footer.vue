@@ -2,7 +2,7 @@
   <b-container class="outer" fluid>
     <b-container class="inner">
       <p>This app is powered by</p>
-      <img src="../assets/footer-logo.svg" alt="footer logo" />
+      <img src="../assets/images/footer-logo.svg" alt="footer logo" />
     </b-container>
   </b-container>
 </template>
@@ -16,19 +16,16 @@ export default {
 <style lang="scss" scoped>
 .outer {
   height: 12vh;
-  background-color: #373737;
+  background-color: $background-dark;
 }
 
 .inner {
-  height: 100%;
-  min-width: 80%;
-  display: flex;
-  flex-direction: column;
+  @extend %inner;
   justify-content: center;
 
   p {
     text-align: center;
-    color: white;
+    color: $heading-light;
     margin: 0;
     letter-spacing: 1px;
   }

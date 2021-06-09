@@ -24,20 +24,14 @@ export default {
 
 <style lang="scss" scoped>
 .outer {
+  @extend %outer;
   height: 75vh;
-  padding: 0px;
 }
 
 .inner {
-  height: 100%;
+  @extend %inner;
   min-width: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   padding: 0px;
-
-  h3 {
-    text-align: center;
-  }
 }
 </style>

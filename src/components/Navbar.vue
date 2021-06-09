@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark">
       <b-navbar-brand href="#">
-        <img src="../assets/logo.svg" alt="CoffeeDrop Logo" />
+        <img src="../assets/images/logo.svg" alt="CoffeeDrop Logo" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -38,7 +38,7 @@ div {
     color: white;
     margin-left: 80px;
     &:hover {
-      color: #28e7a8;
+      color: $green;
     }
   }
 }

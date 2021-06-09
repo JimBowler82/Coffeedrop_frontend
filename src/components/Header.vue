@@ -13,24 +13,17 @@
             cashback or free coffee!
           </h3>
           <div class="app-store-buttons">
-            <a href="#">
-              <img
-                src="../assets/app-store@2x.png"
-                alt="IOS app store button"
-              />
-            </a>
-            <a href="#">
-              <img
-                src="../assets/google-play@2x.png"
-                alt="Google play button"
-              />
-            </a>
+            <AppStoreButton
+              v-for="appStore in appStoreButtons"
+              :key="appStore.id"
+              :appStore="appStore"
+            />
           </div>
         </div>
 
         <div class="app-mockup">
           <img
-            src="../assets/app-mockup@2x.png"
+            src="../assets/images/app-mockup@2x.png"
             alt="app mockup illustration"
           />
         </div>
@@ -41,35 +34,37 @@
 
 <script>
 import Navbar from "./Navbar.vue";
+import AppStoreButton from "./AppStoreButton.vue";
+import { appStoreButtons } from "../data/data";
 export default {
   name: "Header",
   components: {
     Navbar,
+    AppStoreButton,
+  },
+  data() {
+    return {
+      appStoreButtons: appStoreButtons,
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .outer {
-  width: 100%;
-  background-image: url("../assets/coffeebeans-1.jpg");
+  @extend %outer;
+  background-image: url("../assets/images/coffeebeans-1.jpg");
   background-size: cover;
   background-position: center;
   height: 75vh;
-  min-height: 75vh;
-  padding: 0;
-  overflow: hidden;
 }
 
 .inner {
-  min-width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  @extend %inner;
 }
 
 .headline {
-  color: white;
+  color: $heading-light;
   display: flex;
   height: 100%;
 }
@@ -78,6 +73,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 50%;
+  color: $heading-light;
 
   h1 {
     font-weight: 700;
@@ -87,20 +83,13 @@ export default {
   h3 {
     font-weight: 300;
     margin-top: 50px;
+    font-weight: 400;
   }
 }
 
 .app-store-buttons {
   display: flex;
   margin-top: 60px;
-
-  img {
-    width: 200px;
-
-    &:first-of-type {
-      margin-right: 30px;
-    }
-  }
 }
 
 .app-mockup {
@@ -124,19 +113,6 @@ export default {
   .app-store-buttons {
     flex-direction: column;
     margin-top: 30px;
-
-    img {
-      &:first-of-type {
-        margin-bottom: 15px;
-      }
-    }
-  }
-
-  .app-mockup {
-    img {
-      // width: 650px;
-      // transform: translateX(-150px);
-    }
   }
 }
 
@@ -160,7 +136,6 @@ export default {
     width: 100%;
 
     img {
-      //width: 750px;
       transform: translate(10px, -80px);
     }
   }
@@ -175,7 +150,6 @@ export default {
 
   .app-mockup {
     img {
-      //width: 750px;
       transform: translate(-200px, 0px);
     }
   }

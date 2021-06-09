@@ -19,14 +19,12 @@ export default {
   data() {
     return {
       platform: null,
-      apikey: "IhtkIaClMw1piLoY1dYC6btfraCYRbphRZQLo9zSf68",
+      apikey: process.env.VUE_APP_HERE_MAP_KEY,
       locations: [],
     };
   },
   async mounted() {
-    this.getlocationData(
-      "http://coffeedrop.staging2.image-plus.co.uk/api/locations"
-    );
+    this.getlocationData(process.env.VUE_APP_COFFEE_DROP_LOCATIONS_URL);
     // Initialize the platform object:
     const platform = new window.H.service.Platform({
       apikey: this.apikey,
@@ -48,17 +46,19 @@ export default {
     initializeHereMap() {
       const mapContainer = this.$refs.hereMap;
       const H = window.H;
-      var maptypes = this.platform.createDefaultLayers();
+      const maptypes = this.platform.createDefaultLayers();
 
-      var map = new H.Map(mapContainer, maptypes.vector.normal.map, {
+      const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
         zoom: 5.5,
         center: this.center,
       });
 
-      var svg = require("../assets/map-pin.svg");
+      // Map marker svg
+      const svg = require("../assets/images/map-pin.svg");
 
+      // Place map marker for each location
       this.locations.forEach((location) => {
-        var icon = new H.map.Icon(svg),
+        const icon = new H.map.Icon(svg),
           coords = {
             lat: location.coordinates.latitude,
             lng: location.coordinates.longitude,
@@ -68,8 +68,10 @@ export default {
         map.addObject(marker);
       });
 
+      // Listen for resize
       addEventListener("resize", () => map.getViewPort().resize());
 
+      // Allow moving around map behaviour
       //new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     },
   },

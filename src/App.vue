@@ -28,10 +28,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;700&display=swap");
+@import "./assets/scss/main.scss";
+
 #app {
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
