@@ -1,6 +1,7 @@
 # Coffeedrop frontend
 
-[View Live Here]()
+[View Live Here](https://coffeedrop.netlify.app/)
+(If the map does not display, temporarily unblock insecure content in browser settings)
 
 Built with:
 
@@ -13,13 +14,13 @@ Built with:
 ### Clone the repo
 
 ```bash
-  git clone
+  git clone https://github.com/JimBowler82/Coffeedrop_frontend.git
 ```
 
 ### change directory
 
 ```bash
-  cd
+  cd Coffeedrop_frontend
 ```
 
 ### Install dependencies
