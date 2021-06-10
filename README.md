@@ -1,24 +1,46 @@
-# coffeedrop_frontend
+# Coffeedrop frontend
 
-## Project setup
-```
-npm install
-```
+[View Live Here]()
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Built with:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Vue JS 2.6.11
+- Bootstrap-vue 2.17.3
+- Sass
 
-### Lints and fixes files
-```
-npm run lint
+## How to use
+
+### Clone the repo
+
+```bash
+  git clone
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### change directory
+
+```bash
+  cd
+```
+
+### Install dependencies
+
+```bash
+  npm install
+```
+
+### Create `.env` file from `.env.example`
+
+```bash
+  cp .env.example .env
+```
+
+- Add your api key for use of HERE maps
+- Add url for locations api
+
+### Run the dev server
+
+```bash
+  npm run serve
+```
+
+- Project will be served to `localhost:8080`
